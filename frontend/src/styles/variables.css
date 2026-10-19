@@ -1,0 +1,17 @@
+:root {
+  --bg: #120d24;
+  --bg-alt: #1b1436;
+  --card: #241b45;
+  --line: #3a2d6b;
+  --text: #f3eefc;
+  --muted: #b9afd6;
+  --gold: #e3b95f;
+  --gold-light: #f6d98f;
+  --ok: #7fd6a3;
+  --danger: #ff9b9b;
+  --header-bg: rgba(18, 13, 36, 0.92);
+  --font-body: Georgia, "Times New Roman", serif;
+  --font-title: "Palatino Linotype", Palatino, Georgia, serif;
+  --header-h: 64px;
+  color-scheme: dark;
+}

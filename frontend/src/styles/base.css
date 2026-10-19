@@ -1,0 +1,62 @@
+*, *::before, *::after { box-sizing: border-box; }
+
+:root {
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+}
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: calc(var(--header-h) + 8px + env(safe-area-inset-top, 0px));
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.65 var(--font-body);
+}
+
+/* cobre a área do notch no celular */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px);
+  background: var(--header-bg);
+  z-index: 30;
+}
+
+h1, h2, h3 { font-family: var(--font-title); line-height: 1.2; margin: 0 0 0.5em; }
+a { color: inherit; }
+
+.wrap { max-width: 1040px; margin: 0 auto; padding: 0 20px; }
+
+.eyebrow { color: var(--gold); letter-spacing: 0.2em; text-transform: uppercase; font-size: 0.78rem; }
+.sub { color: var(--muted); max-width: 620px; }
+.sub--center { margin: 0 auto 28px; }
+
+.btn {
+  display: inline-block;
+  border: 0;
+  cursor: pointer;
+  background: linear-gradient(135deg, var(--gold), var(--gold-light));
+  color: #2a1d05;
+  font: 700 1rem var(--font-body);
+  padding: 13px 26px;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: transform 0.15s;
+}
+.btn:hover { transform: translateY(-2px); }
+.btn:disabled { opacity: 0.45; cursor: not-allowed; transform: none; }
+
+:is(input, select, textarea, .chip, .btn, summary, .burger):focus-visible {
+  outline: 2px solid var(--gold);
+  outline-offset: 2px;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  .btn { transition: none; }
+}
